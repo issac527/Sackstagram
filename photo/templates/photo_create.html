@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+Photo Create
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col"></div>
+    <div class="col-6">
+        <!--// 파일(ex: image file)을 보내는 경우 enctype를 추가하여 인코딩 //-->
+        <!--// form 적용 //-->
+        <form action="" method="post" enctype="multipart/form-data">
+        <!--// alert 적용 //-->
+            <div class="alert alert-info">Please enter your photo information</div>
+            {% csrf_token %}
+            {{form.as_p}}
+            <!--// button 적용 //-->
+            <input type="submit" value="Create" class="btn btn-outline-primary">
+        </form>
+    </div>
+    <div class="col"></div>
+</div>
+{% endblock %}
